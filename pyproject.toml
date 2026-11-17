@@ -1,0 +1,19 @@
+[project]
+name = "fastapi-learning"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Chetan Patil", email = "chetanpatil0322@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard]>=0.163.1",
+]
+
+[project.scripts]
+fastapi-learning = "fastapi_learning:main"
+
+[build-system]
+requires = ["uv_build>=0.12.18,<0.13.0"]
+build-backend = "uv_build"
