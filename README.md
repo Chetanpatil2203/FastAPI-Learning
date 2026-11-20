@@ -180,3 +180,52 @@ Topics practiced:
 ---
 
 **Learning by building, practicing, debugging, and improving every day.**
+
+## Day 2 – Pydantic Fundamentals
+
+Today I explored Pydantic and learned how to validate and structure data in Python applications using FastAPI.
+
+### Topics Covered
+
+- Pydantic `BaseModel`
+- Type hints and data validation
+- Lax mode and strict mode
+- Optional fields and default values
+- `Field()` and field constraints
+- `Annotated` with `Field()`
+- `ConfigDict` and `model_config`
+- Extra fields configuration:
+  - `ignore`
+  - `forbid`
+  - `allow`
+- Nested Pydantic models
+
+### Practical Exercises
+
+- Created Product and Employee models.
+- Applied validation constraints using `Field()`.
+- Practiced reusable validation types using `Annotated`.
+- Explored how Pydantic handles invalid input.
+- Practiced model configuration and extra fields.
+
+### Example
+
+```python
+from typing import Annotated
+from pydantic import BaseModel, Field
+
+class Employee(BaseModel):
+    name: Annotated[str, Field(min_length=3)]
+    age: Annotated[int, Field(ge=18, le=60)]
+    salary: Annotated[float, Field(gt=0)]
+```
+
+### Key Takeaway
+
+Pydantic helps define structured data models, enforce validation rules, and handle input data reliably.
+
+**Learning approach:** Learn concepts → Write code → Practice → Debug → Understand.
+
+---
+
+*Documenting my backend development journey, one day at a time.*
